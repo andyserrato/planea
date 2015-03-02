@@ -25,9 +25,9 @@ class TarifasController extends ApiController {
         // 3. Linking db structure to the API output
         // 4. No way to signal headers/response codes
 		$tarifas = Tarifa::all();
-        return $this->respond([
-            'data' => $this->tarifaTransformer->transformCollection($tarifas->all())
-        ]);
+        return $this->respond(
+            $this->tarifaTransformer->transformCollection($tarifas->all())
+        );
         //return Tarifa::all();
 	}
 
@@ -87,9 +87,9 @@ class TarifasController extends ApiController {
         }
 */
         }
-        return $this->respond([
-            'data' => $this->tarifaTransformer->transform($tarifa)
-        ]);
+        return $this->respond(
+             $this->tarifaTransformer->transform($tarifa)
+        );
 	}
 
 

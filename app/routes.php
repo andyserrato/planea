@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('hello');
 });
+*/
 
+Route::get('/', 'HomeController@index');
 Route::group(['prefix' => 'api/v1'], function()
 {
     Route::resource('tarifas', 'TarifasController');
